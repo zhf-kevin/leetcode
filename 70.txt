@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int climbStairs(int n) {
+        if(n == 1)
+            return 1;
+        else if(n == 2)
+            return 2;
+        else
+        {
+            int preLast = 1;
+            int last = 2;
+            int re = 0;
+            for(int i = 3; i <= n; i++)
+            {
+                re = preLast + last;
+                preLast = last;
+                last = re;
+            }
+            return re;
+        }
+    }
+};
